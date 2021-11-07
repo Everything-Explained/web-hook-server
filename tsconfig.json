@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "incremental"       : true,
+    "target"            : "ESNEXT",
+    "module"            : "commonjs",
+    "sourceMap"         : true,
+    "removeComments"    : true,
+    "strict"            : true,
+    "esModuleInterop"   : true,
+    "resolveJsonModule" : true,
+  }
+}

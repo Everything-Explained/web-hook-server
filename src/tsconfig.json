@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "incremental"       : true,
+    "target"            : "ESNEXT",
+    "module"            : "commonjs",
+    "declaration"       : true,
+    "sourceMap"         : false,
+    "removeComments"    : true,
+    "strict"            : true,
+    "esModuleInterop"   : true,
+    "resolveJsonModule" : true,
+    "outDir"            : "../bin"
+  }
+}
