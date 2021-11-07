@@ -1,5 +1,5 @@
 {
-  "name": "evex_hook-server",
+  "name": "evex_webhook-server",
   "version": "1.0.0",
   "description": "Web Hook Server for Everything Explained",
   "main": "bin/main.js",
