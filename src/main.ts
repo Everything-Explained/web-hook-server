@@ -5,6 +5,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import config from './config.json';
 import { releaseHook } from './routes/release_hook';
+import { log, logErr } from './utils';
 
 
 
@@ -23,10 +24,10 @@ server.register(releaseHook);
 
 server.listen(config.port, '0.0.0.0', (err, address) => {
   if (err) {
-    console.error(err);
+    logErr(err);
     process.exit(1);
   }
-  console.log(`Server listening at ${address}`);
+  log(`Server listening at ${address}`);
 });
 
 

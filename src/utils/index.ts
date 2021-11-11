@@ -32,3 +32,11 @@ export function indent(num: number) {
   };
 }
 
+export function log(...args: any[]) {
+  console.log(...args);
+}
+
+export function logErr(...args: any[]) {
+  console.error(...args);
+}
+

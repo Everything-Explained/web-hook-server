@@ -1,4 +1,4 @@
-import { colors, indent, replyForbidden } from "../utils";
+import { colors, indent, log, replyForbidden } from "../utils";
 import { createHmac }                     from "crypto";
 import { FastifyInstance }                from "fastify";
 import { HookInfo }                       from "../typings/hookinfo";
@@ -49,11 +49,11 @@ function logCommitInfo(cmdLog: string, hookinfo: HookInfo) {
   const names     = hookinfo.head_commit.modified;
   const commitMsg = hookinfo.head_commit.message;
   const header    = `\n\n${c.bg(`${commitMsg} >>> `)}${c.y(date)}`;
-  console.log(header);
-  console.log(c.dw(cmdLog));
-  names.forEach(n => console.log(`    ${n}`));
-  console.log(`${c.bg('-')}`.repeat(header.length - 21)); // subtract color char offset
-  console.log(''); // Spacer
+  log(header);
+  log(c.dw(cmdLog));
+  names.forEach(n => log(`    ${n}`));
+  log(`${c.bg('-')}`.repeat(header.length - 21)); // subtract color char offset
+  log(''); // Spacer
 }
 
 
