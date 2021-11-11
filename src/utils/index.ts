@@ -13,6 +13,8 @@ export const colors = {
   by: chalk.yellowBright,
   g: chalk.green,
   bg: chalk.greenBright,
+  b: chalk.blue,
+  bb: chalk.blueBright,
   w: chalk.white,
   bw: chalk.whiteBright,
   dw: chalk.grey,
