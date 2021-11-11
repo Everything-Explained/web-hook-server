@@ -7,3 +7,4 @@ ssl
 *.tsbuildinfo
 *.map
 config.json
+scratch.ts

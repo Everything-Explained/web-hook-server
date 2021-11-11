@@ -1,33 +1,35 @@
 #!/usr/bin/env node
 
-
-
 import fastify from 'fastify';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import config from './config.json';
+import { releaseHook } from './routes/release_hook';
+
 
 
 const server = fastify({
   http2: true,
   https: {
+    allowHTTP1: true,
     key: readFileSync(join(__dirname, 'ssl', 'public.key')),
     cert: readFileSync(join(__dirname, 'ssl', 'private.cert'))
   }
 });
 
 
-server.get('/ping', async (req, rep) => {
-  return 'pong';
-});
+server.register(releaseHook);
 
 
-server.listen(3003, (err, address) => {
+server.listen(config.port, '0.0.0.0', (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);
   }
   console.log(`Server listening at ${address}`);
 });
+
+
 
 
 
